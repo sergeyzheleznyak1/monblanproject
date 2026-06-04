@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markup test</title>
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./vendor/flatpickr/flatpickr.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./vendor/flatpickr/flatpickr.min.js" defer></script>
+    <script src="./js/main.js" type="module" defer></script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header__inner">
+            <a href="/" class="header__logo">
+                <img class="header__logo-image" src="./img/logo.svg" alt="Monblanproject" width="138" height="138">
+            </a>
+
+            <div class="header__content">
+                <div class="header__profile">
+                    <div class="header__heading">
+                        <h1 class="header__title h1">monblanproject</h1>
+                        <time class="header__start" datetime="2016-02-17">Start on 17-02-2016</time>
+                    </div>
+
+                    <ul class="header__stats">
+                        <li class="header__stats-item">
+                            <span class="header__stats-value">870</span>
+                            <span class="header__stats-label">posts</span>
+                        </li>
+                        <li class="header__stats-item">
+                            <span class="header__stats-value">11,787</span>
+                            <span class="header__stats-label">followers</span>
+                        </li>
+
+                        <li class="header__stats-item">
+                            <span class="header__stats-value">112</span>
+                            <span class="header__stats-label">following</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="header__controls">
+                    <form class="header__filter">
+                        <label class="header__filter-label">
+                            Date
+                            <input class="header__filter-input" type="text" name="date-from" placeholder="from" data-datepicker="from" aria-label="Date from" autocomplete="off">
+                        </label>
+
+                        <label class="header__filter-label">
+                            <input class="header__filter-input" type="text" name="date-to" placeholder="to" data-datepicker="to" aria-label="Date to" autocomplete="off">
+                        </label>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="main">
+        <section class="posts" data-posts data-view="rows">
+            <div class="posts__inner container">
+                <div class="posts__toolbar" aria-label="Posts view">
+                    <button class="posts__view-button is-active" type="button" data-posts-view="rows" aria-label="Show rows" aria-pressed="true">
+                        <svg class="posts__view-icon" aria-hidden="true">
+                            <use href="./img/icon-view-rows.svg#icon-view-rows"></use>
+                        </svg>
+                    </button>
+                    <button class="posts__view-button" type="button" data-posts-view="tiles" aria-label="Show tiles" aria-pressed="false">
+                        <svg class="posts__view-icon" aria-hidden="true">
+                            <use href="./img/icon-view-tiles.svg#icon-view-tiles"></use>
+                        </svg>
+                    </button>
+                </div>
+
+                <ul class="posts__list" data-posts-list>
+                    <li class="posts__item">
+                        <article class="post-card">
+                            <img class="post-card__image" src="./img/post-01.png" alt="">
+                            <div class="post-card__body">
+                                <div class="post-card__column post-card__column--primary">
+                                    <h2 class="post-card__title">Today</h2>
+                                    <div class="post-card__metrics">
+                                        <span class="post-card__metric">
+                                            <img class="post-card__metric-icon" src="./img/icon-heart.svg" alt="" aria-hidden="true">
+                                            <span>128</span>
+                                            <span class="visually-hidden">likes</span>
+                                        </span>
+                                        <span class="post-card__metric">
+                                            <img class="post-card__metric-icon" src="./img/icon-comment.svg" alt="" aria-hidden="true">
+                                            <span>31</span>
+                                            <span class="visually-hidden">comments</span>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="post-card__column post-card__column--secondary">
+                                    <time class="post-card__date" datetime="2016-08-09">9-08-2016</time>
+                                    <div class="post-card__metrics">
+                                        <span class="post-card__metric">
+                                            <img class="post-card__metric-icon" src="./img/icon-heart.svg" alt="" aria-hidden="true">
+                                            <span>67</span>
+                                            <span class="visually-hidden">likes</span>
+                                        </span>
+                                        <span class="post-card__metric">
+                                            <img class="post-card__metric-icon" src="./img/icon-comment.svg" alt="" aria-hidden="true">
+                                            <span>22</span>
+                                            <span class="visually-hidden">comments</span>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="post-card__column post-card__column--upload">
+                                    <p class="post-card__upload-title">Image upload</p>
+                                    <time class="post-card__upload-date" datetime="2016-04-11">11-04-2016</time>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    <li class="posts__item">
+                        <article class="post-card">
+                            <img class="post-card__image" src="./img/post-02.png" alt="">
+                            <div class="post-card__body">
+                                <div class="post-card__column post-card__column--primary">
+                                    <h2 class="post-card__title">Today</h2>
+                                    <div class="post-card__metrics">
+                                        <span class="post-card__metric"><img class="post-card__metric-icon" src="./img/icon-heart.svg" alt="" aria-hidden="true"><span>128</span><span class="visually-hidden">likes</span></span>
+                                        <span class="post-card__metric"><img class="post-card__metric-icon" src="./img/icon-comment.svg" alt="" aria-hidden="true"><span>31</span><span class="visually-hidden">comments</span></span>
+                                    </div>
+                                </div>
+                                <div class="post-card__column post-card__column--secondary">
+                                    <time class="post-card__date" datetime="2016-08-09">9-08-2016</time>
+                                    <div class="post-card__metrics">
+                                        <span class="post-card__metric"><img class="post-card__metric-icon" src="./img/icon-heart.svg" alt="" aria-hidden="true"><span>67</span><span class="visually-hidden">likes</span></span>
+                                        <span class="post-card__metric"><img class="post-card__metric-icon" src="./img/icon-comment.svg" alt="" aria-hidden="true"><span>22</span><span class="visually-hidden">comments</span></span>
+                                    </div>
+                                </div>
+                                <div class="post-card__column post-card__column--upload">
+                                    <p class="post-card__upload-title">Image upload</p>
+                                    <time class="post-card__upload-date" datetime="2016-04-11">11-04-2016</time>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    <li class="posts__item">
+                        <article class="post-card">
+                            <img class="post-card__image" src="./img/post-03.png" alt="">
+                            <div class="post-card__body">
+                                <div class="post-card__column post-card__column--primary">
+                                    <h2 class="post-card__title">Today</h2>
+                                    <div class="post-card__metrics">
+                                        <span class="post-card__metric"><img class="post-card__metric-icon" src="./img/icon-heart.svg" alt="" aria-hidden="true"><span>128</span><span class="visually-hidden">likes</span></span>
+                                        <span class="post-card__metric"><img class="post-card__metric-icon" src="./img/icon-comment.svg" alt="" aria-hidden="true"><span>31</span><span class="visually-hidden">comments</span></span>
+                                    </div>
+                                </div>
+                                <div class="post-card__column post-card__column--secondary">
+                                    <time class="post-card__date" datetime="2016-08-09">9-08-2016</time>
+                                    <div class="post-card__metrics">
+                                        <span class="post-card__metric"><img class="post-card__metric-icon" src="./img/icon-heart.svg" alt="" aria-hidden="true"><span>67</span><span class="visually-hidden">likes</span></span>
+                                        <span class="post-card__metric"><img class="post-card__metric-icon" src="./img/icon-comment.svg" alt="" aria-hidden="true"><span>22</span><span class="visually-hidden">comments</span></span>
+                                    </div>
+                                </div>
+                                <div class="post-card__column post-card__column--upload">
+                                    <p class="post-card__upload-title">Image upload</p>
+                                    <time class="post-card__upload-date" datetime="2016-04-11">11-04-2016</time>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    <li class="posts__item">
+                        <article class="post-card">
+                            <img class="post-card__image" src="./img/post-04.png" alt="">
+                            <div class="post-card__body">
+                                <div class="post-card__column post-card__column--primary">
+                                    <h2 class="post-card__title">Today</h2>
+                                    <div class="post-card__metrics">
+                                        <span class="post-card__metric"><img class="post-card__metric-icon" src="./img/icon-heart.svg" alt="" aria-hidden="true"><span>128</span><span class="visually-hidden">likes</span></span>
+                                        <span class="post-card__metric"><img class="post-card__metric-icon" src="./img/icon-comment.svg" alt="" aria-hidden="true"><span>31</span><span class="visually-hidden">comments</span></span>
+                                    </div>
+                                </div>
+                                <div class="post-card__column post-card__column--secondary">
+                                    <time class="post-card__date" datetime="2016-08-09">9-08-2016</time>
+                                    <div class="post-card__metrics">
+                                        <span class="post-card__metric"><img class="post-card__metric-icon" src="./img/icon-heart.svg" alt="" aria-hidden="true"><span>67</span><span class="visually-hidden">likes</span></span>
+                                        <span class="post-card__metric"><img class="post-card__metric-icon" src="./img/icon-comment.svg" alt="" aria-hidden="true"><span>22</span><span class="visually-hidden">comments</span></span>
+                                    </div>
+                                </div>
+                                <div class="post-card__column post-card__column--upload">
+                                    <p class="post-card__upload-title">Image upload</p>
+                                    <time class="post-card__upload-date" datetime="2016-04-11">11-04-2016</time>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    <li class="posts__item">
+                        <article class="post-card">
+                            <img class="post-card__image" src="./img/post-05.png" alt="">
+                            <div class="post-card__body">
+                                <div class="post-card__column post-card__column--primary">
+                                    <h2 class="post-card__title">Today</h2>
+                                    <div class="post-card__metrics">
+                                        <span class="post-card__metric"><img class="post-card__metric-icon" src="./img/icon-heart.svg" alt="" aria-hidden="true"><span>128</span><span class="visually-hidden">likes</span></span>
+                                        <span class="post-card__metric"><img class="post-card__metric-icon" src="./img/icon-comment.svg" alt="" aria-hidden="true"><span>31</span><span class="visually-hidden">comments</span></span>
+                                    </div>
+                                </div>
+                                <div class="post-card__column post-card__column--secondary">
+                                    <time class="post-card__date" datetime="2016-08-09">9-08-2016</time>
+                                    <div class="post-card__metrics">
+                                        <span class="post-card__metric"><img class="post-card__metric-icon" src="./img/icon-heart.svg" alt="" aria-hidden="true"><span>67</span><span class="visually-hidden">likes</span></span>
+                                        <span class="post-card__metric"><img class="post-card__metric-icon" src="./img/icon-comment.svg" alt="" aria-hidden="true"><span>22</span><span class="visually-hidden">comments</span></span>
+                                    </div>
+                                </div>
+                                <div class="post-card__column post-card__column--upload">
+                                    <p class="post-card__upload-title">Image upload</p>
+                                    <time class="post-card__upload-date" datetime="2016-04-11">11-04-2016</time>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    <li class="posts__item">
+                        <article class="post-card">
+                            <img class="post-card__image" src="./img/post-06.png" alt="">
+                            <div class="post-card__body">
+                                <div class="post-card__column post-card__column--primary">
+                                    <h2 class="post-card__title">Today</h2>
+                                    <div class="post-card__metrics">
+                                        <span class="post-card__metric"><img class="post-card__metric-icon" src="./img/icon-heart.svg" alt="" aria-hidden="true"><span>128</span><span class="visually-hidden">likes</span></span>
+                                        <span class="post-card__metric"><img class="post-card__metric-icon" src="./img/icon-comment.svg" alt="" aria-hidden="true"><span>31</span><span class="visually-hidden">comments</span></span>
+                                    </div>
+                                </div>
+                                <div class="post-card__column post-card__column--secondary">
+                                    <time class="post-card__date" datetime="2016-08-09">9-08-2016</time>
+                                    <div class="post-card__metrics">
+                                        <span class="post-card__metric"><img class="post-card__metric-icon" src="./img/icon-heart.svg" alt="" aria-hidden="true"><span>67</span><span class="visually-hidden">likes</span></span>
+                                        <span class="post-card__metric"><img class="post-card__metric-icon" src="./img/icon-comment.svg" alt="" aria-hidden="true"><span>22</span><span class="visually-hidden">comments</span></span>
+                                    </div>
+                                </div>
+                                <div class="post-card__column post-card__column--upload">
+                                    <p class="post-card__upload-title">Image upload</p>
+                                    <time class="post-card__upload-date" datetime="2016-04-11">11-04-2016</time>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    <li class="posts__item">
+                        <article class="post-card">
+                            <img class="post-card__image" src="./img/post-07.png" alt="">
+                            <div class="post-card__body">
+                                <div class="post-card__column post-card__column--primary">
+                                    <h2 class="post-card__title">Today</h2>
+                                    <div class="post-card__metrics">
+                                        <span class="post-card__metric"><img class="post-card__metric-icon" src="./img/icon-heart.svg" alt="" aria-hidden="true"><span>128</span><span class="visually-hidden">likes</span></span>
+                                        <span class="post-card__metric"><img class="post-card__metric-icon" src="./img/icon-comment.svg" alt="" aria-hidden="true"><span>31</span><span class="visually-hidden">comments</span></span>
+                                    </div>
+                                </div>
+                                <div class="post-card__column post-card__column--secondary">
+                                    <time class="post-card__date" datetime="2016-08-09">9-08-2016</time>
+                                    <div class="post-card__metrics">
+                                        <span class="post-card__metric"><img class="post-card__metric-icon" src="./img/icon-heart.svg" alt="" aria-hidden="true"><span>67</span><span class="visually-hidden">likes</span></span>
+                                        <span class="post-card__metric"><img class="post-card__metric-icon" src="./img/icon-comment.svg" alt="" aria-hidden="true"><span>22</span><span class="visually-hidden">comments</span></span>
+                                    </div>
+                                </div>
+                                <div class="post-card__column post-card__column--upload">
+                                    <p class="post-card__upload-title">Image upload</p>
+                                    <time class="post-card__upload-date" datetime="2016-04-11">11-04-2016</time>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    <li class="posts__item">
+                        <article class="post-card">
+                            <img class="post-card__image" src="./img/post-08.png" alt="">
+                            <div class="post-card__body">
+                                <div class="post-card__column post-card__column--primary">
+                                    <h2 class="post-card__title">Today</h2>
+                                    <div class="post-card__metrics">
+                                        <span class="post-card__metric"><img class="post-card__metric-icon" src="./img/icon-heart.svg" alt="" aria-hidden="true"><span>128</span><span class="visually-hidden">likes</span></span>
+                                        <span class="post-card__metric"><img class="post-card__metric-icon" src="./img/icon-comment.svg" alt="" aria-hidden="true"><span>31</span><span class="visually-hidden">comments</span></span>
+                                    </div>
+                                </div>
+                                <div class="post-card__column post-card__column--secondary">
+                                    <time class="post-card__date" datetime="2016-08-09">9-08-2016</time>
+                                    <div class="post-card__metrics">
+                                        <span class="post-card__metric"><img class="post-card__metric-icon" src="./img/icon-heart.svg" alt="" aria-hidden="true"><span>67</span><span class="visually-hidden">likes</span></span>
+                                        <span class="post-card__metric"><img class="post-card__metric-icon" src="./img/icon-comment.svg" alt="" aria-hidden="true"><span>22</span><span class="visually-hidden">comments</span></span>
+                                    </div>
+                                </div>
+                                <div class="post-card__column post-card__column--upload">
+                                    <p class="post-card__upload-title">Image upload</p>
+                                    <time class="post-card__upload-date" datetime="2016-04-11">11-04-2016</time>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    <li class="posts__item">
+                        <article class="post-card">
+                            <img class="post-card__image" src="./img/post-09.png" alt="">
+                            <div class="post-card__body">
+                                <div class="post-card__column post-card__column--primary">
+                                    <h2 class="post-card__title">Today</h2>
+                                    <div class="post-card__metrics">
+                                        <span class="post-card__metric"><img class="post-card__metric-icon" src="./img/icon-heart.svg" alt="" aria-hidden="true"><span>128</span><span class="visually-hidden">likes</span></span>
+                                        <span class="post-card__metric"><img class="post-card__metric-icon" src="./img/icon-comment.svg" alt="" aria-hidden="true"><span>31</span><span class="visually-hidden">comments</span></span>
+                                    </div>
+                                </div>
+                                <div class="post-card__column post-card__column--secondary">
+                                    <time class="post-card__date" datetime="2016-08-09">9-08-2016</time>
+                                    <div class="post-card__metrics">
+                                        <span class="post-card__metric"><img class="post-card__metric-icon" src="./img/icon-heart.svg" alt="" aria-hidden="true"><span>67</span><span class="visually-hidden">likes</span></span>
+                                        <span class="post-card__metric"><img class="post-card__metric-icon" src="./img/icon-comment.svg" alt="" aria-hidden="true"><span>22</span><span class="visually-hidden">comments</span></span>
+                                    </div>
+                                </div>
+                                <div class="post-card__column post-card__column--upload">
+                                    <p class="post-card__upload-title">Image upload</p>
+                                    <time class="post-card__upload-date" datetime="2016-04-11">11-04-2016</time>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                </ul>
+
+                <button class="posts__load-more" type="button">LOAD MORE</button>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
