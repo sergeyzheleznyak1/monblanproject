@@ -1,0 +1,14 @@
+.flatpickr-calendar {
+    z-index: 10;
+    font-family: var(--font-family-base);
+}
+
+.flatpickr-day.selected,
+.flatpickr-day.startRange,
+.flatpickr-day.endRange,
+.flatpickr-day.selected:hover,
+.flatpickr-day.startRange:hover,
+.flatpickr-day.endRange:hover {
+    border-color: var(--color-accent);
+    background-color: var(--color-accent);
+}

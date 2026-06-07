@@ -1,0 +1,31 @@
+:root {
+    --color-black: #000;
+    --color-white: #fff;
+    --color-light-gray: #E5E5E5;
+    --color-gray: #DEDEDE;
+    --color-gray-alt: #EBEBEB;
+    --color-dark-gray: #929292;
+    --color-view-muted: #C8C8C8;
+    --color-accent: #3D8EDA;
+
+    --font-family-base: "Roboto", sans-serif;
+    --font-family-accent: "Montserrat", sans-serif;
+
+    --drop-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.12);
+    --inner-shadow: inset 0 12px 24px 0 rgba(0, 0, 0, 0.12);
+    --focus-outline: 2px solid color-mix(in srgb, var(--color-accent) 35%, transparent);
+
+    --border-1: 1px solid var(--color-dark-gray);
+    --border-2: 1px solid var(--color-accent);
+    --border-3: 1px solid var(--color-gray);
+
+    --border-radius-small: 2px;
+    --border-radius-medium: 4px;
+    --border-radius-large: 14px;
+
+    --container-width: 836px;
+    --container-padding-x: 20px;
+
+    --input-height: 28px;
+    --transition-duration: 0.2s;
+}

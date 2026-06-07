@@ -1,0 +1,178 @@
+.header {
+    --header-height: clamp(132px, 11.94vw, 172px);
+    --decor-top-width: clamp(430px, 47.85vw, 689px);
+    --decor-top-left: clamp(-59px, -4.1vw, -26px);
+    --decor-top-top: clamp(-84px, -5.87vw, -48px);
+    --logo-size: clamp(96px, 9.58vw, 138px);
+    --logo-left: clamp(190px, 24.65vw, 355px);
+    --logo-top: clamp(6px, 0.42vw, 6px);
+    --content-left: clamp(390px, 40.21vw, 579px);
+    --content-top: clamp(28px, 2.29vw, 33px);
+
+    position: relative;
+    min-height: var(--header-height);
+    isolation: isolate;
+}
+
+.header::before,
+.header::after {
+    content: "";
+    position: absolute;
+    pointer-events: none;
+}
+
+.header::before {
+    top: var(--decor-top-top);
+    left: var(--decor-top-left);
+    z-index: -2;
+    width: var(--decor-top-width);
+    aspect-ratio: 689 / 482.087;
+    background: url("../img/decor-top.svg") 0 0 / contain no-repeat;
+}
+
+.header::after {
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: var(--header-height);
+    background-color: rgba(255, 255, 255, 0.67);
+    box-shadow: var(--inner-shadow), var(--drop-shadow);
+}
+
+.header__inner {
+    position: relative;
+    width: 100%;
+    min-height: inherit;
+}
+
+.header__logo {
+    position: absolute;
+    top: var(--logo-top);
+    left: var(--logo-left);
+    z-index: 1;
+    width: var(--logo-size);
+    height: var(--logo-size);
+}
+
+.header__content {
+    position: absolute;
+    top: var(--content-top);
+    left: var(--content-left);
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(16px, 1.3vw, 20px);
+}
+
+.header__profile {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(10px, 1.04vw, 15px);
+}
+
+.header__heading {
+    display: flex;
+    align-items: center;
+    gap: clamp(12px, 1.18vw, 17px);
+}
+
+.header__start {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: clamp(112px, 9.38vw, 135px);
+    height: clamp(24px, 1.94vw, 28px);
+    border: var(--border-2);
+    border-radius: var(--border-radius-small);
+    font-size: clamp(11px, 0.9vw, 13px);
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    color: var(--color-accent);
+}
+
+.header__stats {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px clamp(18px, 1.94vw, 28px);
+    font-size: clamp(12px, 0.97vw, 14px);
+    line-height: 1;
+}
+
+.header__stats-value {
+    font-weight: 700;
+}
+
+.header__stats-label {
+    font-weight: 400;
+}
+
+.header__controls,
+.header__filter {
+    display: flex;
+    align-items: center;
+}
+
+.header__filter {
+    gap: 24px;
+}
+
+.header__filter-label {
+    display: inline-flex;
+    align-items: center;
+    gap: clamp(8px, 0.69vw, 10px);
+    font-size: clamp(14px, 1.11vw, 16px);
+    font-weight: 400;
+    line-height: 1;
+}
+
+.header__filter-input {
+    width: clamp(132px, 11.25vw, 162px);
+    height: clamp(24px, 1.94vw, 28px);
+    padding-inline: clamp(6px, 0.56vw, 8px);
+    border: var(--border-3);
+    border-radius: var(--border-radius-medium);
+    font-size: clamp(11px, 0.9vw, 13px);
+    color: var(--color-dark-gray);
+    background-color: var(--color-gray-alt);
+}
+
+.header__filter-input:focus {
+    border-color: var(--color-accent);
+    outline: 0;
+}
+
+@media (min-width: 1441px) {
+    .header__content {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+@media (max-width: 767.98px) {
+    .header {
+        --header-height: 248px;
+        --decor-top-width: clamp(350px, 110vw, 430px);
+        --decor-top-left: clamp(-120px, -22vw, -86px);
+        --decor-top-top: clamp(-72px, -16vw, -56px);
+        --logo-size: clamp(82px, 24.6vw, 96px);
+        --logo-left: clamp(108px, 31vw, 122px);
+        --content-left: var(--container-padding-x);
+        --content-top: 132px;
+    }
+
+    .header__content {
+        width: calc(100vw - 40px);
+    }
+
+    .header__heading,
+    .header__filter {
+        flex-wrap: wrap;
+    }
+
+    .header__controls {
+        gap: 14px;
+    }
+}

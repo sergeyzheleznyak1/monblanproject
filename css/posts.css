@@ -1,0 +1,392 @@
+.posts {
+    padding-block: clamp(16px, 1.25vw, 18px);
+}
+
+.posts__inner {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(18px, 1.6vw, 23px);
+}
+
+.posts__toolbar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 21px;
+    padding-inline: clamp(4px, 0.35vw, 5px);
+}
+
+.posts__view-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 22px;
+    padding: 0;
+    border: 0;
+    color: var(--color-view-muted);
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.posts__view-button:hover,
+.posts__view-button:focus-visible,
+.posts__view-button.is-active {
+    color: var(--color-accent);
+}
+
+.posts__view-button.is-active {
+    pointer-events: none;
+}
+
+.posts__view-icon {
+    display: block;
+    width: 24px;
+    height: 22px;
+    fill: currentColor;
+    transition-duration: var(--transition-duration);
+    transform-origin: center;
+}
+
+[data-posts-view="tiles"] .posts__view-icon {
+    width: 22px;
+}
+
+.posts__view-button.is-animating .posts__view-icon {
+    animation: viewIconActivate 0.28s ease-out;
+}
+
+.posts__list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    list-style: none;
+}
+
+.posts__item {
+    min-width: 0;
+}
+
+.posts__load-more {
+    align-self: center;
+    margin-top: clamp(24px, 2.29vw, 33px);
+}
+
+.post-card {
+    display: flex;
+    width: 100%;
+    min-height: 86px;
+    background-color: var(--color-white);
+    transition-duration: var(--transition-duration);
+}
+
+.post-card__image {
+    flex: 0 0 86px;
+    width: 86px;
+    aspect-ratio: 1;
+    object-fit: cover;
+}
+
+.post-card__body {
+    display: flex;
+    flex: 1;
+    align-items: flex-start;
+    justify-content: space-between;
+    min-width: 0;
+    padding: 16px clamp(18px, 2.57vw, 37px) 0 clamp(22px, 2.08vw, 30px);
+}
+
+.post-card__column {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.post-card__column--primary {
+    flex-basis: 210px;
+}
+
+.post-card__column--secondary {
+    flex-basis: 180px;
+}
+
+.post-card__column--upload {
+    flex-basis: 140px;
+}
+
+.post-card__title,
+.post-card__date,
+.post-card__upload-title {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1;
+}
+
+.post-card__upload-date {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1;
+}
+
+.post-card__metrics {
+    display: flex;
+    gap: 36px;
+}
+
+.post-card__metric {
+    --metric-icon-url: url("../img/icon-heart.svg");
+
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    line-height: 1;
+    color: var(--color-black);
+    cursor: pointer;
+    transition-duration: var(--transition-duration);
+}
+
+.post-card__metric:has(.post-card__metric-icon[src$="icon-comment.svg"]) {
+    --metric-icon-url: url("../img/icon-comment.svg");
+}
+
+.post-card__metric::before {
+    content: "";
+    flex-shrink: 0;
+    width: 18px;
+    aspect-ratio: 1;
+    background-color: currentColor;
+    mask: var(--metric-icon-url) center / contain no-repeat;
+    -webkit-mask: var(--metric-icon-url) center / contain no-repeat;
+    transition-duration: var(--transition-duration);
+}
+
+.post-card__metric-icon {
+    display: none;
+}
+
+.posts[data-view="tiles"] .posts__list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px 8px;
+}
+
+.posts[data-view="tiles"] .post-card {
+    height: 341px;
+    min-height: 341px;
+    flex-direction: column;
+}
+
+.posts[data-view="tiles"] .post-card__image {
+    flex-basis: auto;
+    width: 100%;
+    aspect-ratio: 1;
+}
+
+.posts[data-view="tiles"] .post-card__body {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto 1fr;
+    column-gap: 12px;
+    row-gap: 10px;
+    flex: 1 1 auto;
+    padding: 12px 12px 0;
+}
+
+.posts[data-view="tiles"] .post-card__column {
+    display: contents;
+    flex-basis: auto;
+}
+
+.posts[data-view="tiles"] .post-card__column--primary .post-card__title {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.posts[data-view="tiles"] .post-card__column--primary .post-card__metrics {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.posts[data-view="tiles"] .post-card__column--secondary .post-card__date {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.posts[data-view="tiles"] .post-card__column--secondary .post-card__metrics {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.posts[data-view="tiles"] .post-card__column--upload .post-card__upload-title {
+    grid-column: 1;
+    grid-row: 3;
+    align-self: start;
+    padding-top: 16px;
+}
+
+.posts[data-view="tiles"] .post-card__column--upload .post-card__upload-date {
+    grid-column: 2;
+    grid-row: 3;
+    align-self: start;
+    padding-top: 18px;
+}
+
+.posts[data-view="tiles"] .post-card__metrics {
+    flex-direction: column;
+    gap: 8px;
+}
+
+.posts[data-view="tiles"] .post-card__title,
+.posts[data-view="tiles"] .post-card__date {
+    font-size: 16px;
+}
+
+.posts[data-view="tiles"] .post-card__upload-title {
+    font-size: 14px;
+}
+
+.posts[data-view="tiles"] .post-card__upload-date {
+    font-size: 12px;
+}
+
+@keyframes viewIconActivate {
+    0% {
+        transform: scale(1);
+    }
+
+    45% {
+        transform: scale(1.16);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .posts__view-button.is-animating .posts__view-icon {
+        animation: none;
+    }
+}
+
+@media (any-hover: hover) {
+    .post-card:hover {
+        background-color: var(--color-gray-alt);
+    }
+
+    .post-card__metric:hover {
+        color: var(--color-accent);
+    }
+}
+
+@media (any-hover: none) {
+    .post-card:active {
+        background-color: var(--color-gray-alt);
+    }
+
+    .post-card__metric:active {
+        color: var(--color-accent);
+    }
+}
+
+@media (max-width: 900px) {
+    .post-card__body {
+        gap: 18px;
+    }
+
+    .post-card__column--primary,
+    .post-card__column--secondary,
+    .post-card__column--upload {
+        flex-basis: auto;
+    }
+
+    .posts[data-view="tiles"] .posts__list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .posts[data-view="tiles"] .post-card {
+        height: auto;
+        min-height: 0;
+    }
+
+    .posts[data-view="tiles"] .post-card__body {
+        row-gap: 8px;
+        padding: 10px;
+    }
+
+    .posts[data-view="tiles"] .post-card__metrics {
+        gap: 6px;
+    }
+
+    .posts[data-view="tiles"] .post-card__title,
+    .posts[data-view="tiles"] .post-card__date {
+        font-size: 15px;
+    }
+
+    .posts[data-view="tiles"] .post-card__column--upload .post-card__upload-title {
+        padding-top: 8px;
+    }
+
+    .posts[data-view="tiles"] .post-card__column--upload .post-card__upload-date {
+        padding-top: 10px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .posts {
+        padding-top: 24px;
+    }
+
+    .posts__toolbar {
+        justify-content: flex-start;
+    }
+
+    .posts[data-view="tiles"] .posts__list {
+        grid-template-columns: 1fr;
+    }
+
+    .post-card,
+    .posts[data-view="tiles"] .post-card {
+        height: auto;
+        min-height: 0;
+        flex-direction: column;
+    }
+
+    .post-card__image,
+    .posts[data-view="tiles"] .post-card__image {
+        flex-basis: auto;
+        width: 100%;
+        aspect-ratio: 16 / 10;
+    }
+
+    .post-card__body,
+    .posts[data-view="tiles"] .post-card__body {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        padding: 16px;
+    }
+
+    .post-card__column,
+    .posts[data-view="tiles"] .post-card__column {
+        display: flex;
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 16px;
+    }
+
+    .posts[data-view="tiles"] .post-card__column--upload .post-card__upload-title,
+    .posts[data-view="tiles"] .post-card__column--upload .post-card__upload-date {
+        padding-top: 0;
+    }
+
+    .post-card__metrics,
+    .posts[data-view="tiles"] .post-card__metrics {
+        flex-direction: row;
+        gap: 18px;
+    }
+}

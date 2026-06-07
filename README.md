@@ -13,7 +13,7 @@ A responsive profile posts page based on a Figma design. The project is built wi
 ## Project Structure
 
 ```text
-css/                Styles and normalization
+css/                Split CSS entry, globals, components, and page blocks
 fonts/              Local font files
 img/                Images, icons, and decorative SVGs
 js/modules/         JavaScript feature modules
