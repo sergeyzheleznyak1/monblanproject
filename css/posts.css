@@ -1,11 +1,11 @@
 .posts {
-    padding-block: clamp(16px, 1.25vw, 18px);
+    padding-block: clamp(16px, calc(18 / 1440 * 100vw), 18px);
 }
 
 .posts__inner {
     display: flex;
     flex-direction: column;
-    gap: clamp(18px, 1.6vw, 23px);
+    gap: clamp(18px, calc(23 / 1440 * 100vw), 23px);
 }
 
 .posts__toolbar {
@@ -13,7 +13,7 @@
     justify-content: flex-end;
     align-items: center;
     gap: 21px;
-    padding-inline: clamp(4px, 0.35vw, 5px);
+    padding-inline: clamp(4px, calc(5 / 1440 * 100vw), 5px);
 }
 
 .posts__view-button {
@@ -69,7 +69,7 @@
 
 .posts__load-more {
     align-self: center;
-    margin-top: clamp(24px, 2.29vw, 33px);
+    margin-top: clamp(24px, calc(33 / 1440 * 100vw), 33px);
 }
 
 .post-card {
@@ -93,7 +93,7 @@
     align-items: flex-start;
     justify-content: space-between;
     min-width: 0;
-    padding: 16px clamp(18px, 2.57vw, 37px) 0 clamp(22px, 2.08vw, 30px);
+    padding: 16px clamp(18px, calc(37 / 1440 * 100vw), 37px) 0 clamp(22px, calc(30 / 1440 * 100vw), 30px);
 }
 
 .post-card__column {
@@ -118,7 +118,7 @@
 .post-card__date,
 .post-card__upload-title {
     margin: 0;
-    font-size: 16px;
+    font-size: clamp(14px, calc(16 / 1440 * 100vw), 16px);
     font-weight: 500;
     line-height: 1;
 }
@@ -241,7 +241,7 @@
 
 .posts[data-view="tiles"] .post-card__title,
 .posts[data-view="tiles"] .post-card__date {
-    font-size: 16px;
+    font-size: clamp(14px, calc(16 / 1440 * 100vw), 16px);
 }
 
 .posts[data-view="tiles"] .post-card__upload-title {
@@ -249,7 +249,7 @@
 }
 
 .posts[data-view="tiles"] .post-card__upload-date {
-    font-size: 12px;
+    font-size: 14px;
 }
 
 @keyframes viewIconActivate {
@@ -323,7 +323,7 @@
 
     .posts[data-view="tiles"] .post-card__title,
     .posts[data-view="tiles"] .post-card__date {
-        font-size: 15px;
+        font-size: clamp(14px, calc(15 / 1440 * 100vw), 15px);
     }
 
     .posts[data-view="tiles"] .post-card__column--upload .post-card__upload-title {
