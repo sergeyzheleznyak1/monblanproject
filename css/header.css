@@ -82,7 +82,6 @@
     gap: clamp(13px, calc(17 / 1440 * 100vw), 17px);
 }
 
-
 .header__start {
     display: inline-flex;
     align-items: center;
@@ -126,8 +125,8 @@
 .header__filter-label {
     display: inline-flex;
     align-items: center;
-    gap: clamp(8px, calc(10 / 1440 * 100vw), 10px);
-    font-size: clamp(14px, calc(16 / 1440 * 100vw), 16px);
+    gap: 10px;
+    font-size: 16px;
     font-weight: 400;
 }
 
@@ -182,5 +181,9 @@
     .header__filter {
         flex-wrap: wrap;
         gap: 16px;
+    }
+
+    .header__filter-label {
+        font-size: 14px;
     }
 }

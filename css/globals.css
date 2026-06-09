@@ -17,6 +17,12 @@
     overflow: hidden !important;
 }
 
+:focus-visible {
+    outline: 3px dashed var(--color-accent);
+    outline-offset: 4px;
+    transition-duration: 0s !important;
+}
+
 body {
     display: flex;
     flex-direction: column;
@@ -46,6 +52,22 @@ main::after {
     background-repeat: no-repeat;
     background-size: contain;
     pointer-events: none;
+}
+
+a[aria-label]:not([aria-label="Home"]),
+button[aria-label] {
+    position: relative;
+}
+
+a[aria-label]:not([aria-label="Home"])::before,
+button[aria-label]::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    width: 44px;
+    height: 44px;
 }
 
 a[class] {
