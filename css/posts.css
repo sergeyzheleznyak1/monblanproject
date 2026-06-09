@@ -313,7 +313,6 @@
 
     .posts[data-view="rows"] .post-card__image {
         width: 100%;
-        aspect-ratio: 16 / 10;
     }
 
     .posts[data-view="rows"] .post-card__body {
