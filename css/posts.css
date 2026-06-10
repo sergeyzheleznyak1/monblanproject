@@ -93,7 +93,6 @@
     font-size: 14px;
     color: var(--color-black);
 
-    cursor: pointer;
     transition-duration: var(--transition-duration);
 }
 
@@ -261,26 +260,6 @@
 @media (prefers-reduced-motion: reduce) {
     .posts__view-button.is-animating .posts__view-icon {
         animation: none;
-    }
-}
-
-@media (any-hover: hover) {
-    .post-card:hover {
-        background-color: var(--color-gray-alt);
-    }
-
-    .post-card__metric:hover {
-        color: var(--color-accent);
-    }
-}
-
-@media (any-hover: none) {
-    .post-card:active {
-        background-color: var(--color-gray-alt);
-    }
-
-    .post-card__metric:active {
-        color: var(--color-accent);
     }
 }
 
