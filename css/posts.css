@@ -263,6 +263,26 @@
     }
 }
 
+@media (any-hover: hover) {
+    .post-card:hover {
+        background-color: var(--color-gray-alt);
+    }
+
+    .post-card__metric:hover {
+        color: var(--color-accent);
+    }
+}
+
+@media (any-hover: none) {
+    .post-card:active {
+        background-color: var(--color-gray-alt);
+    }
+
+    .post-card__metric:active {
+        color: var(--color-accent);
+    }
+}
+
 @media (max-width: 900px) {
     .posts[data-view="tiles"] .posts__list {
         grid-template-columns: repeat(3, 1fr);
