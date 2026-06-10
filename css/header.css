@@ -42,7 +42,6 @@
 }
 
 .header__inner {
-    position: relative;
     padding-block: clamp(10px, calc(17 / 1440 * 100vw), 17px);
     width: 100%;
     min-height: inherit;
