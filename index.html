@@ -23,25 +23,25 @@
             <div class="header__content">
                 <div class="header__profile">
                     <div class="header__heading">
-                        <h1 class="header__title h1">monblanproject</h1>
+                        <p class="header__title h1">monblanproject</p>
                         <time class="header__start" datetime="2016-02-17">Start on 17-02-2016</time>
                     </div>
 
-                    <ul class="header__stats">
-                        <li class="header__stats-item">
-                            <span class="header__stats-value">870</span>
-                            <span class="header__stats-label">posts</span>
-                        </li>
-                        <li class="header__stats-item">
-                            <span class="header__stats-value">11,787</span>
-                            <span class="header__stats-label">followers</span>
-                        </li>
+                    <dl class="header__stats">
+                        <div class="header__stats-item">
+                            <dt class="header__stats-label">posts</dt>
+                            <dd class="header__stats-value">870</dd>
+                        </div>
+                        <div class="header__stats-item">
+                            <dt class="header__stats-label">followers</dt>
+                            <dd class="header__stats-value">11,787</dd>
+                        </div>
 
-                        <li class="header__stats-item">
-                            <span class="header__stats-value">112</span>
-                            <span class="header__stats-label">following</span>
-                        </li>
-                    </ul>
+                        <div class="header__stats-item">
+                            <dt class="header__stats-label">following</dt>
+                            <dd class="header__stats-value">112</dd>
+                        </div>
+                    </dl>
                 </div>
 
                 <div class="header__controls">
@@ -62,7 +62,8 @@
         </div>
     </header>
     <main class="main">
-        <section class="posts" data-posts data-view="rows">
+        <section class="posts" data-posts data-view="rows" aria-labelledby="posts-title">
+            <h1 class="visually-hidden" id="posts-title">Posts by monblanproject</h1>
             <div class="posts__inner container">
                 <div class="posts__toolbar" aria-label="Posts view">
                     <button class="posts__view-button is-active" type="button" data-posts-view="rows"

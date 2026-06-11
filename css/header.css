@@ -99,10 +99,19 @@
     flex-wrap: wrap;
     align-items: center;
     gap: clamp(18px, calc(28 / 1440 * 100vw), 22px);
+    margin: 0;
     font-size: 14px;
 }
 
+.header__stats-item {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 4px;
+}
+
 .header__stats-value {
+    order: -1;
+    margin: 0;
     font-weight: 700;
 }
 
